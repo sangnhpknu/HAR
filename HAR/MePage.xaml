@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HAR.MePage"
+             Title="Me Page">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <!--User Avatar-->
+            <Frame CornerRadius="100" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center">
+                <Image Source="user_avatar.png" Aspect="AspectFill" />
+            </Frame>
+
+            <!-- Name Field -->
+            <Label Text="Name" FontSize="16" />
+            <Entry x:Name="NameEntry" Placeholder="Enter your name" />
+
+            <!-- Email Field -->
+            <Label Text="Email" FontSize="16" />
+            <Entry x:Name="EmailEntry" Placeholder="Enter your email" Keyboard="Email" />
+
+            <!-- Phone Number Field -->
+            <Label Text="Phone Number" FontSize="16" />
+            <Entry x:Name="PhoneEntry" Placeholder="Enter your phone number" Keyboard="Telephone" />
+
+            <!-- Date of Birth -->
+            <Label Text="Date of Birth" FontSize="16" />
+            <DatePicker x:Name="DateOfBirthPicker" />
+
+            <!-- Gender Selection -->
+            <Label Text="Gender" FontSize="16" />
+            <Picker x:Name="GenderPicker">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Male</x:String>
+                        <x:String>Female</x:String>
+                        <x:String>Other</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Save Button -->
+            <Button Text="Save Information" 
+                    BackgroundColor="#007BFF" 
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnSaveButtonClicked" />
+        </StackLayout>  
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HAR.SettingPage"
+             Title="Setting Page">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <!-- Page Title -->
+            <Label Text="Settings" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+
+            <!-- Bluetooth Settings -->
+            <Label Text="Bluetooth Settings" 
+                   FontSize="18" 
+                   FontAttributes="Bold" />
+
+            <Button Text="Scan for BLE Devices" 
+                    Command="{Binding ScanCommand}" 
+                    BackgroundColor="#007BFF" 
+                    TextColor="White" 
+                    CornerRadius="10" />
+
+            <!-- List of BLE Devices -->
+            <ListView ItemsSource="{Binding DiscoveredDevices}" 
+                      x:Name="BleDevicesList"
+                      SelectedItem="{Binding SelectedDevice}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" 
+                                  Detail="{Binding Address}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Connect to Selected Device" 
+                    Command="{Binding ConnectCommand}" 
+                    BackgroundColor="Green" 
+                    TextColor="White" 
+                    IsEnabled="{Binding SelectedDevice, Converter={StaticResource NullToBoolConverter}}" />
+
+            <!-- User Preferences -->
+            <Label Text="User Preferences" 
+                   FontSize="18" 
+                   FontAttributes="Bold" />
+
+            <!-- Toggle Setting -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="Enable Notifications" VerticalOptions="Center" />
+                <Switch IsToggled="{Binding EnableNotifications}" />
+            </StackLayout>
+
+            <!-- Slider Setting -->
+            <StackLayout>
+                <Label Text="Volume Level" />
+                <Slider Minimum="0" Maximum="100" Value="{Binding VolumeLevel}" />
+                <Label Text="{Binding VolumeLevel, StringFormat='Volume: {0}%'}" />
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="HAR.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:HAR"
+    Shell.FlyoutBehavior="Disabled"
+    Title="HAR">
+
+    <FlyoutItem>
+        <ShellContent
+            Title="Me"
+            Icon="me_icon.png"
+            ContentTemplate="{DataTemplate local:MePage}"
+            Route="MePage" />
+        <ShellContent
+            Title="Tracking"
+            Icon="me_icon.png"
+            ContentTemplate="{DataTemplate local:TrackingPage}"
+            Route="TrackingPage" />
+        <ShellContent
+            Title="Report"
+            ContentTemplate="{DataTemplate local:ReportPage}"
+            Route="ReportPage" />
+        <ShellContent
+            Title="Setting"
+            ContentTemplate="{DataTemplate local:SettingPage}"
+            Route="SettingPage" />
+    </FlyoutItem>
+    
+
+</Shell>
