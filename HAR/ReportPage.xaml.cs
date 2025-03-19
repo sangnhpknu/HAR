@@ -44,7 +44,7 @@ public partial class ReportPage : ContentPage
             // Initialize chart data
             ChartData = new List<ChartDataModel>
             {
-                new ChartDataModel { Date = "2025-01-25", ExercisesCount = 5, TimeSpent = 30 },
+                new ChartDataModel { Date = "2025-01-25", ExercisesCount = 5, TimeSpent = 35 },
                 new ChartDataModel { Date = "2025-01-26", ExercisesCount = 6, TimeSpent = 50 },
                 new ChartDataModel { Date = "2025-01-27", ExercisesCount = 7, TimeSpent = 100 },
                 new ChartDataModel { Date = "2025-01-28", ExercisesCount = 7, TimeSpent = 100 },
@@ -64,9 +64,10 @@ public partial class ReportPage : ContentPage
             {
                 "2025-01-25" => new List<Exercise>
                 {
-                    new Exercise { ExerciseName = "Pushup", Duration = "10 mins" },
-                    new Exercise { ExerciseName = "Squat", Duration = "15 mins" },
-                    new Exercise { ExerciseName = "Plank", Duration = "5 mins" }
+                    new Exercise { ExerciseName = "Pushup", Duration = " 50 reps - 5 mins" },
+                    new Exercise { ExerciseName = "Squat", Duration = "100 reps - 15 mins" },
+                    new Exercise { ExerciseName = "Plank", Duration = "2 reps - 5 mins" },
+                    new Exercise { ExerciseName = "Bicep Curl", Duration = "50 reps - 10 mins" },
                 },
                 "2025-01-26" => new List<Exercise>
                 {
